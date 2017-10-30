@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Friends</title>
+</head>
+<body>
+    <h1>Friends:</h1>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Friend Since</th>
+        </tr>
+        <tr>
+            <td>Howard Yang</td>
+            <td>26</td>
+            <td>10.13.2017</td>
+        </tr>
+        {% for i in all_friends %}
+        <tr>
+            <td>{{i['name']}}</td>
+            <td>{{i['age']}}</td>
+            <td>{{i['created_at']}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <form action="/process" method='POST'>
+        Name: <input type="text" name="name">
+        Age: <input type="text" name="age">
+        <input type="submit" name="submit">
+    </form>
+</body>
+</html>
